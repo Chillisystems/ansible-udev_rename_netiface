@@ -11,6 +11,6 @@
     src: rules.j2
     dest: /etc/udev/rules.d/70-persistent-net.rules
   register: udev_rename_netiface_config_changed
-  when: udev_rename_netiface_enabled == true
+  when: udev_rename_netiface_enabled|bool
   tags:
     - udev_rename_netiface_config
