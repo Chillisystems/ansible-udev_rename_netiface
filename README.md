@@ -18,7 +18,8 @@ Example of how to define udev rewrite rules:
   vars:
     # First we define the data structure with the interface(s). It is the same
     # data scructure used by the 'network_interface' role with the difference
-    # that only the 'device' and the 'hwaddr' params are required.
+    # that only the 'device' and the 'hwaddr' params are required. Optionally,
+    # 'drivers' parameter can be also passed
     network_ether_interfaces:
      - device: eth0
        hwaddr: 12:34:56:78:90:ab
