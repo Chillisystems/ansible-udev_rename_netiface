@@ -12,7 +12,7 @@
       {%- if 'hwaddr' in item.keys() %}
         {%- if vars.update({'print_nl': True}) %}{% endif -%}
         SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="{{ item.hwaddr | lower }}", NAME="{{ item.device }}"
-        {%- if item.drivers is defined %}, DRIVERS=={{ item.drivers }}{% endif -%}
+        {%- if item.drivers is defined %}, DRIVERS=="{{ item.drivers }}"{% endif -%}
         {{ "\n" }}
       {%- else %}
         {%- if vars.update({'missing_hwaddr': True}) %}{% endif -%}
